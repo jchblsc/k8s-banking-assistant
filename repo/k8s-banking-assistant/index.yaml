@@ -1,0 +1,22 @@
+apiVersion: v1
+entries:
+  assistantsimple:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-02-27T00:17:31.1409939-07:00
+    description: Watson Assistant Simple
+    digest: c7cd9e54d9c36ae01524f8c2966f06f2c8ecef9f94b6e965da804d853ef61eb9
+    icon: https://www.ibm.com/watson/assets/duo/img/common/avatar_purple.png
+    keywords:
+    - Watson
+    - Assistant
+    maintainers:
+    - email: harrisjc@us.ibm.com
+      name: Jeff Harris
+    name: assistantsimple
+    sources:
+    - https://github.com/jchblsc/assistant-simple
+    urls:
+    - https://raw.githubusercontent.com/jchblsc/assistant-simple/master/repo/assistantsimple/assistantsimple-0.0.5.tgz
+    version: 0.0.5
+generated: 2019-02-27T00:17:31.1399946-07:00

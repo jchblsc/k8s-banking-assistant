@@ -1,0 +1,37 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-{{ .Chart.Name }}
+  labels:
+    app: assistantsimple
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name | quote }}
+
+
+spec:
+  replicas: {{ .Values.replicas }}
+  template:
+    metadata:
+      labels:
+         app: assistantsimple
+         chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+         release: {{ .Release.Name | quote }}
+
+
+    spec:
+      containers:
+      - name: {{ .Release.Name }}-web
+        image: "jchdckr/assistantsimple-express-tools:latest"
+        imagePullPolicy: Always
+        ports:
+        - name: http
+          containerPort: 3000
+        env:
+        - name: DEBUG_MODE
+          value: "{{ .Values.debugMode }}"
+        - name: ASSISTANT_IAM_APIKEY
+          value: {{ .Values.watsonskill.assistantIamApiKey }}
+        - name: WORKSPACE_ID
+          value: {{ .Values.watsonskill.workspaceId }}
+        - name: ASSISTANT_URL
+          value: "{{ .Values.watsonskill.assistantUrl }}"

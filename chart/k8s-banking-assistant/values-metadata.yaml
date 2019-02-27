@@ -1,0 +1,48 @@
+replicas:
+ __metadata:
+    name: "replicas"
+    label: "Number of replicas"
+    description: "The number of desired replica pods that run simultaneously."
+    type: "number"
+    default: 1
+    immutable: false
+    required: true
+
+debugMode:
+ __metadata:
+    name: "debugMode"
+    label: "Debug Mode"
+    description: "Enables highest logging level"
+    type: "boolean"
+    default: false
+    immutable: false
+    required: true
+
+watsonskill:
+  __metadata:
+    label: "Watson skill access"
+  assistantIamApiKey:
+    __metadata:
+      name: "assistantIamApiKey"
+      label: "Watson Assistant IAM apikey"
+      description: "The IAM apikey used to authenticate to Watson Assistant"
+      type: "string"
+      immutable: false
+      required: true
+  workspaceId:
+    __metadata:
+      name: "workspaceId"
+      label: "Watson Assistant Workspace ID"
+      description: "The Workspace ID of the Watson skill integrated with Slack"
+      type: "string"
+      immutable: false
+      required: true
+  assistantUrl:
+    __metadata:
+      name: "assistantUrl"
+      label: "Watson Assistant API Endpoint"
+      description: "REST endpoint used to interact with the Watson Assistant skill"
+      type: "string"
+      default: "https://gateway.watsonplatform.net/assistant/api"
+      immutable: false
+      required: false

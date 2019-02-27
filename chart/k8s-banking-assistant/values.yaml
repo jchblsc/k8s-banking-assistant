@@ -1,0 +1,13 @@
+
+replicas: 1
+debugMode: "true"
+
+watsonskill:
+  assistantIamApiKey:
+  workspaceId:
+  assistantUrl: "https://gateway.watsonplatform.net/assistant/api"
+
+service:
+  name: node
+  type: NodePort
+  servicePort: 3000
