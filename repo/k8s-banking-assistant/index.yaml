@@ -17,6 +17,6 @@ entries:
     sources:
     - https://github.com/jchblsc/k8s-banking-assistant
     urls:
-    - k8s-banking-assistant-0.0.1.tgz
+    - https://raw.githubusercontent.com/jchblsc/k8s-banking-assistant/master/repo/k8s-banking-assistant/k8s-banking-assistant-0.0.1.tgz
     version: 0.0.1
 generated: 2019-02-27T18:54:08.3123235-07:00
