@@ -27,6 +27,12 @@ var app = express();
 app.use(express.static('./public')); // load UI from public folder
 app.use(bodyParser.json());
 
+console.log("ASSISTANT_USERNAME: " + process.env.ASSISTANT_USERNAME);
+console.log("ASSISTANT_PASSWORD: " + process.env.ASSISTANT_PASSWORD);
+console.log("WORKSPACE_ID: " + process.env.WORKSPACE_ID);
+console.log("ASSISTANT_URL: " + process.env.ASSISTANT_URL);
+
+
 // Create the service wrapper
 
 var assistant = new AssistantV1({
