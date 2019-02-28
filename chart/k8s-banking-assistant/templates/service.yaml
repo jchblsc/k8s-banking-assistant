@@ -10,6 +10,10 @@ spec:
   type: {{ .Values.service.type }}
   ports:
   - name: http
-    port: {{ .Values.service.servicePort }}
+    port: {{ .Values.service.containerPort }}
+{{ if (.Values.service.type) and eq .Values.service.type "NodePort" and (.Values.service.nodePort) }}
+    nodePort: {{ .Values.service.nodePort }}
+{{ end }}
+
   selector:
     app: "{{  .Chart.Name }}-selector"

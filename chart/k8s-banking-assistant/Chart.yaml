@@ -1,8 +1,8 @@
 apiVersion: v1
 appVersion: "1.0"
-description: Watson Assistant Simple
-name: assistantsimple
-version: "0.0.5"
+description: Watson Banking Assistant
+name: k8s-banking-assistant
+version: "0.0.1"
 maintainers:
   - name: Jeff Harris
     email: harrisjc@us.ibm.com
@@ -11,4 +11,4 @@ keywords:
   - Assistant
 icon: https://www.ibm.com/watson/assets/duo/img/common/avatar_purple.png
 sources:
-- https://github.com/jchblsc/assistant-simple
+- https://github.com/jchblsc/k8s-banking-assistant

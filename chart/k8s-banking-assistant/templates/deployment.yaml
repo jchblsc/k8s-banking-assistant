@@ -21,16 +21,18 @@ spec:
     spec:
       containers:
       - name: {{ .Release.Name }}-web
-        image: "jchdckr/assistantsimple-express-tools:latest"
+        image: {{ .Values.service.image }}
         imagePullPolicy: Always
         ports:
         - name: http
-          containerPort: 3000
+          containerPort: {{ .Values.service.containerPort }}
         env:
         - name: DEBUG_MODE
           value: "{{ .Values.debugMode }}"
-        - name: ASSISTANT_IAM_APIKEY
-          value: {{ .Values.watsonskill.assistantIamApiKey }}
+        - name: ASSISTANT_USERNAME
+          value: {{ .Values.watsonskill.assistantUsername }}
+        - name: ASSISTANT_PASSWORD
+          value: {{ .Values.watsonskill.assistantPassword }}
         - name: WORKSPACE_ID
           value: {{ .Values.watsonskill.workspaceId }}
         - name: ASSISTANT_URL
