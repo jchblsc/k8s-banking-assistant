@@ -12,4 +12,5 @@ service:
   name: node
   type: NodePort
   servicePort: 3000
+  nodePort: 30074
   image: jchdckr/k8s-banking-assistant:latest
