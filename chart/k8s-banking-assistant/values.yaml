@@ -11,6 +11,5 @@ watsonskill:
 service:
   name: node
   type: NodePort
-  containerPort: 3000
-  nodePort: 30074
+  servicePort: 3000
   image: jchdckr/k8s-banking-assistant:latest
