@@ -3,7 +3,7 @@ kind: Service
 metadata:
   annotations:
     prometheus.io/scrape: 'true'
-  name: "{{  .Chart.Name }}-application-service"
+  name: {{ .Release.Name }}-{{ .Chart.Name }}
   labels:
     chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
 spec:
@@ -17,3 +17,5 @@ spec:
 
   selector:
     app: "{{  .Chart.Name }}-selector"
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name | quote }}
