@@ -16,6 +16,6 @@ spec:
 {{ end }}
 
   selector:
-    app: "{{  .Chart.Name }}-selector"
+    app: "{{  .Chart.Name }}-app"
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     release: {{ .Release.Name | quote }}

@@ -13,7 +13,7 @@ spec:
   template:
     metadata:
       labels:
-         app: assistantsimple
+         app: {{  .Chart.Name }}-app
          chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
          release: {{ .Release.Name | quote }}
 
