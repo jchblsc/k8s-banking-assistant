@@ -32,11 +32,12 @@ console.log("ASSISTANT_PASSWORD: " + process.env.ASSISTANT_PASSWORD);
 console.log("WORKSPACE_ID: " + process.env.WORKSPACE_ID);
 console.log("ASSISTANT_URL: " + process.env.ASSISTANT_URL);
 
-
 // Create the service wrapper
 
-var assistant = new AssistantV1({
-  version: '2018-07-10'
+const assistant = new AssistantV1({
+  version: '2018-07-10',
+  iam_apikey: process.env.ASSISTANT_PASSWORD,
+  url: process.env.ASSISTANT_URL
 });
 
 // Endpoint to be call from the client side
