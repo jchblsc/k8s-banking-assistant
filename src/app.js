@@ -64,7 +64,10 @@ app.post('/api/message', function (req, res) {
   // Send the input to the assistant service
   assistant.message(payload, function (err, data) {
     if (err) 
-      return res.status(err.code || 500).json(err);
+	{
+    	console.log('Assistant host communication error: ' + err);
+    	return res.status(500).json(err);
+	}
 
     // This is a fix for now, as since Assistant version 2018-07-10,
     // output text can now be in output.generic.text
