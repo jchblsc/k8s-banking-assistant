@@ -27,7 +27,6 @@ watsonskill:
       label: "Watson Assistant Instance Username"
       description: "The user name used to authenticate to Watson Assistant"
       type: "string"
-      default: "apikey"
       immutable: false
       required: true
   assistantPassword:
@@ -36,7 +35,6 @@ watsonskill:
       label: "Watson Assistant Instance Password"
       description: "The password used to authenticate to Watson Assistant"
       type: "string"
-      default: "V5TQ7K7bEHSP6kafKUHvd50I5-_q5F434adalHPKrAa1"
       immutable: false
       required: true
   workspaceId:
@@ -46,7 +44,6 @@ watsonskill:
       description: "The Workspace ID of the Watson skill integrated with Slack"
       type: "string"
       immutable: false
-      default: "4accc957-376d-4fdf-b2d4-496249c0c5e6"
       required: true
   assistantUrl:
     __metadata:
@@ -54,6 +51,5 @@ watsonskill:
       label: "Watson Assistant API Endpoint"
       description: "REST endpoint used to interact with the Watson Assistant skill"
       type: "string"
-      default: "https://gateway.watsonplatform.net/assistant/api"
       immutable: false
-      required: false
+      required: true

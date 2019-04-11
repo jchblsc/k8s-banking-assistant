@@ -2,12 +2,6 @@
 replicas: 1
 debugMode: "true"
 
-watsonskill:
-  workspaceId: 4accc957-376d-4fdf-b2d4-496249c0c5e6
-  assistantUrl: "https://gateway.watsonplatform.net/assistant/api"
-  assistantUsername: apikey
-  assistantPassword: V5TQ7K7bEHSP6kafKUHvd50I5-_q5F434adalHPKrAa1
-
 service:
   name: node
   type: NodePort

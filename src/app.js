@@ -27,7 +27,7 @@ var app = express();
 app.use(express.static('./public')); // load UI from public folder
 app.use(bodyParser.json());
 
-console.log("app.js: V1.0.1");
+console.log("V1.0.1");
 console.log("ASSISTANT_USERNAME: " + process.env.ASSISTANT_USERNAME);
 console.log("ASSISTANT_PASSWORD: " + process.env.ASSISTANT_PASSWORD);
 console.log("WORKSPACE_ID: " + process.env.WORKSPACE_ID);
