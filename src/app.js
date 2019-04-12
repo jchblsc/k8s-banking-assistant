@@ -38,16 +38,17 @@ const assistant = new AssistantV1({
   disable_ssl_verification: true
 });
 
-console.log("app.js: V1.0.4");
-console.log("env.ASSISTANT_USERNAME: " + process.env.ASSISTANT_USERNAME);
-console.log("env.ASSISTANT_PASSWORD: " + process.env.ASSISTANT_PASSWORD);
+console.log("app.js: V1.0.5");
+console.log("env.ASSISTANT_IAM_APIKEY: " + process.env.ASSISTANT_IAM_APIKEY);
 console.log("env.WORKSPACE_ID: " + process.env.WORKSPACE_ID);
 console.log("env.ASSISTANT_URL: " + process.env.ASSISTANT_URL);
 
 function dumpIfExists(name, env_value)
 {
 	if (env_value)
+	{
 		console.log(name + ': ' + env_value);
+	}
 }
 
 dumpIfExists('env.SERVICE_NAME_USERNAME: ', process.env.SERVICE_NAME_USERNAME);
@@ -60,13 +61,12 @@ dumpIfExists('env.VCAP_SERVICES: ', process.env.VCAP_SERVICES);
 
 console.log("Assistant _options properties: " + Object.getOwnPropertyNames(assistant._options));
 console.log("opt.version: " + assistant._options.version);
-console.log("opt.rejectUnauthorized: " + assistant._options	.rejectUnauthorized);
+console.log("opt.rejectUnauthorized: " + assistant._options.rejectUnauthorized);
+console.log("opt.disable_ssl_verification: " + assistant._options.disable_ssl_verification);
 
 function dumpCredentials(id)
 {
 	console.log("------------- " + id + " Credentials -------------");
-	console.log("opt.username: " + assistant._options.username);
-	console.log("opt.password: " + assistant._options.password);
 	console.log("opt.iam_apikey: " + assistant._options.iam_apikey);
 	console.log("opt.url: " + assistant._options.url);
 }
