@@ -23,7 +23,7 @@
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "lodash": "^4.17.10",
-    "watson-developer-cloud": "^3.7.0"
+    "watson-developer-cloud": "^4.0.1"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",

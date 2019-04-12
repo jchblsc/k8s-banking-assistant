@@ -27,27 +27,47 @@ var app = express();
 app.use(express.static('./public')); // load UI from public folder
 app.use(bodyParser.json());
 
+const API_VERSION = '2019-02-28';
+//const API_VERSION = '2018-07-10';
+
 // Create the service wrapper
 const assistant = new AssistantV1({
-  version: '2018-07-10',
+  version: API_VERSION,
   iam_apikey: process.env.ASSISTANT_PASSWORD,
   url: process.env.ASSISTANT_URL
 });
 
-console.log("app.js: V1.0.2");
+console.log("app.js: V1.0.3");
 console.log("env.ASSISTANT_USERNAME: " + process.env.ASSISTANT_USERNAME);
 console.log("env.ASSISTANT_PASSWORD: " + process.env.ASSISTANT_PASSWORD);
 console.log("env.WORKSPACE_ID: " + process.env.WORKSPACE_ID);
 console.log("env.ASSISTANT_URL: " + process.env.ASSISTANT_URL);
-console.log("Credentials properties: " + Object.getOwnPropertyNames(assistant.getCredentials()));
+
+function dumpIfExists(name, env_value)
+{
+	if (env_value)
+		console.log(name + ': ' + env_value);
+}
+
+dumpIfExists('env.SERVICE_NAME_USERNAME: ', process.env.SERVICE_NAME_USERNAME);
+dumpIfExists('env.SERVICE_NAME_PASSWORD: ', process.env.SERVICE_NAME_PASSWORD);
+dumpIfExists('env.SERVICE_NAME_IAM_APIKEY: ', process.env.SERVICE_NAME_IAM_APIKEY);
+dumpIfExists('env.SERVICE_NAME_IAM_URL: ', process.env.SERVICE_NAME_IAM_URL);
+dumpIfExists('env.SERVICE_NAME_IAM_ACCESS_TOKEN: ', process.env.SERVICE_NAME_IAM_ACCESS_TOKEN);
+dumpIfExists('env.SERVICE_NAME_URL: ', process.env.SERVICE_NAME_URL);
+dumpIfExists('env.VCAP_SERVICES: ', process.env.VCAP_SERVICES);
+
+console.log("Assistant _options properties: " + Object.getOwnPropertyNames(assistant._options));
+console.log("opt.version: " + assistant._options.version);
+console.log("opt.rejectUnauthorized: " + assistant._options	.rejectUnauthorized);
 
 function dumpCredentials(id)
 {
 	console.log("------------- " + id + " Credentials -------------");
-	console.log("Credentials.username: " + assistant.getCredentials().username);
-	console.log("Credentials.password: " + assistant.getCredentials().password);
-	console.log("Credentials.iam_apikey: " + assistant.getCredentials().iam_apikey);
-	console.log("Credentials.url: " + assistant.getCredentials().url);
+	console.log("opt.username: " + assistant._options.username);
+	console.log("opt.password: " + assistant._options.password);
+	console.log("opt.iam_apikey: " + assistant._options.iam_apikey);
+	console.log("opt.url: " + assistant._options.url);
 }
 
 dumpCredentials("Initial");

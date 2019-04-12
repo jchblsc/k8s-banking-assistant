@@ -11,9 +11,12 @@ RUN apt-get update \
 
 # Install npm production packages
 COPY package.json /app/
-RUN cd /app; npm install --production
+COPY public /app/public
+COPY readme_images /app/readme_images
+COPY src /app/src
+COPY test /app/test
 
-COPY . /app
+RUN cd /app; npm install --production
 
 ENV NODE_ENV production
 ENV PORT 3000
