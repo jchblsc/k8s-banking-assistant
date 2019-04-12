@@ -34,10 +34,11 @@ const API_VERSION = '2019-02-28';
 const assistant = new AssistantV1({
   version: API_VERSION,
   iam_apikey: process.env.ASSISTANT_PASSWORD,
-  url: process.env.ASSISTANT_URL
+  url: process.env.ASSISTANT_URL,
+  disable_ssl_verification: true
 });
 
-console.log("app.js: V1.0.3");
+console.log("app.js: V1.0.4");
 console.log("env.ASSISTANT_USERNAME: " + process.env.ASSISTANT_USERNAME);
 console.log("env.ASSISTANT_PASSWORD: " + process.env.ASSISTANT_PASSWORD);
 console.log("env.WORKSPACE_ID: " + process.env.WORKSPACE_ID);
