@@ -29,11 +29,11 @@ spec:
         env:
         - name: DEBUG_MODE
           value: "{{ .Values.debugMode }}"
-        - name: ASSISTANT_USERNAME
-          value: {{ .Values.watsonskill.assistantUsername }}
-        - name: ASSISTANT_PASSWORD
-          value: {{ .Values.watsonskill.assistantPassword }}
+        - name: ASSISTANT_IAM_APIKEY
+          value: {{ .Values.watsonskill.assistantIamApiKey }}
         - name: WORKSPACE_ID
           value: {{ .Values.watsonskill.workspaceId }}
         - name: ASSISTANT_URL
           value: "{{ .Values.watsonskill.assistantUrl }}"
+
+

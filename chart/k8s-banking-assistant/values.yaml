@@ -2,6 +2,11 @@
 replicas: 1
 debugMode: "true"
 
+watsonskill:
+  assistantIamApiKey:
+  workspaceId:
+  assistantUrl: 
+
 service:
   name: node
   type: NodePort
