@@ -27,19 +27,30 @@ var app = express();
 app.use(express.static('./public')); // load UI from public folder
 app.use(bodyParser.json());
 
-console.log("V1.0.1");
-console.log("ASSISTANT_USERNAME: " + process.env.ASSISTANT_USERNAME);
-console.log("ASSISTANT_PASSWORD: " + process.env.ASSISTANT_PASSWORD);
-console.log("WORKSPACE_ID: " + process.env.WORKSPACE_ID);
-console.log("ASSISTANT_URL: " + process.env.ASSISTANT_URL);
-
 // Create the service wrapper
-
 const assistant = new AssistantV1({
   version: '2018-07-10',
   iam_apikey: process.env.ASSISTANT_PASSWORD,
   url: process.env.ASSISTANT_URL
 });
+
+console.log("app.js: V1.0.2");
+console.log("env.ASSISTANT_USERNAME: " + process.env.ASSISTANT_USERNAME);
+console.log("env.ASSISTANT_PASSWORD: " + process.env.ASSISTANT_PASSWORD);
+console.log("env.WORKSPACE_ID: " + process.env.WORKSPACE_ID);
+console.log("env.ASSISTANT_URL: " + process.env.ASSISTANT_URL);
+console.log("Credentials properties: " + Object.getOwnPropertyNames(assistant.getCredentials()));
+
+function dumpCredentials(id)
+{
+	console.log("------------- " + id + " Credentials -------------");
+	console.log("Credentials.username: " + assistant.getCredentials().username);
+	console.log("Credentials.password: " + assistant.getCredentials().password);
+	console.log("Credentials.iam_apikey: " + assistant.getCredentials().iam_apikey);
+	console.log("Credentials.url: " + assistant.getCredentials().url);
+}
+
+dumpCredentials("Initial");
 
 // Endpoint to be call from the client side
 app.post('/api/message', function (req, res) {
@@ -64,6 +75,9 @@ app.post('/api/message', function (req, res) {
 
   // Send the input to the assistant service
   assistant.message(payload, function (err, data) {
+	  
+	  dumpCredentials("Request");
+	  
     if (err) 
 	{
     	console.log('Assistant host communication error: ' + err);
