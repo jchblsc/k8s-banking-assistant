@@ -3,6 +3,7 @@ dist/
 temp/
 .idea/
 coverage
-.env
+.env*
 npm-debug.log
 .jshintrc
+k8s.cmd
