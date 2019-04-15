@@ -6,6 +6,7 @@
 
 var express = require('express');	// app server
 const axios = require('axios');		// HTTP Client
+const https = require('https');
 var bodyParser = require('body-parser'); // parser for post requests
 var _ = require('lodash');
 
@@ -18,7 +19,7 @@ app.use(bodyParser.json());
 const API_VERSION = '2019-02-28';
 //const API_VERSION = '2018-07-10';
 
-console.log("app-axios.js: V2.0.0");
+console.log("app-axios.js: V2.0.1");
 console.log("env.ASSISTANT_IAM_APIKEY: " + process.env.ASSISTANT_IAM_APIKEY);
 console.log("env.WORKSPACE_ID: " + process.env.WORKSPACE_ID);
 console.log("env.ASSISTANT_URL: " + process.env.ASSISTANT_URL);
@@ -27,18 +28,21 @@ var uri = '/v1/workspaces/' + process.env.WORKSPACE_ID + '/message?version=' + A
 
 const instance = axios.create({
 	method:'post',
-  baseURL: process.env.ASSISTANT_URL,
-  url: uri,
-  auth: {
-	    username: 'apikey',
-	    password: process.env.ASSISTANT_IAM_APIKEY
-	  },
-  headers: {'Content-Type': 'application/json'},
-  data: {
-	    input: {
-	    	text: 'Hello'
-	    }
-	  },
+	baseURL: process.env.ASSISTANT_URL,
+	url: uri,
+	auth: {
+	  username: 'apikey',
+	  password: process.env.ASSISTANT_IAM_APIKEY
+	},
+	httpsAgent: new https.Agent({  
+		rejectUnauthorized: false
+	}),
+	headers: {'Content-Type': 'application/json'},
+	data: {
+		input: {
+	    text: 'Hello'
+		}
+	}
 });
 
 function expressPostCallback(req, res) {
