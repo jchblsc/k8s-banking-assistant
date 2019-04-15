@@ -3,9 +3,9 @@ entries:
   k8s-banking-assistant:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-04-14T08:52:06.5654275-07:00
+    created: 2019-04-14T18:44:32.7771286-07:00
     description: Watson Banking Assistant
-    digest: 84eaaf93a247dfd8d407a8e8549ab8af3c089e89020535afabf7d994a0abd966
+    digest: 6ea15fb9c53f4cf6cc0e1139fa253f9d9a6624ff794b386213fe178b3d1fba11
     icon: https://www.ibm.com/watson/assets/duo/img/common/avatar_purple.png
     keywords:
     - Watson
@@ -17,6 +17,6 @@ entries:
     sources:
     - https://github.com/jchblsc/k8s-banking-assistant
     urls:
-    - https://raw.githubusercontent.com/jchblsc/k8s-banking-assistant/master/repo/k8s-banking-assistant/k8s-banking-assistant-2.0.0.tgz
-    version: 2.0.0
-generated: 2019-04-14T08:52:06.5644502-07:00
+    - https://raw.githubusercontent.com/jchblsc/k8s-banking-assistant/master/repo/k8s-banking-assistant/k8s-banking-assistant-2.0.1.tgz
+    version: 2.0.1
+generated: 2019-04-14T18:44:32.7759599-07:00
