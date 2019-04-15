@@ -21,19 +21,11 @@ debugMode:
 watsonskill:
   __metadata:
     label: "Watson skill access"
-  assistantUsername:
+  assistantIamApiKey:
     __metadata:
-      name: "assistantUsername"
-      label: "Watson Assistant Instance Username"
-      description: "The user name used to authenticate to Watson Assistant"
-      type: "string"
-      immutable: false
-      required: true
-  assistantPassword:
-    __metadata:
-      name: "assistantPassword"
-      label: "Watson Assistant Instance Password"
-      description: "The password used to authenticate to Watson Assistant"
+      name: "assistantIamApiKey"
+      label: "Watson Assistant Instance IAM API Key"
+      description: "The API key used for authentication"
       type: "string"
       immutable: false
       required: true
@@ -41,7 +33,7 @@ watsonskill:
     __metadata:
       name: "workspaceId"
       label: "Watson Assistant Workspace ID"
-      description: "The Workspace ID of the Watson skill integrated with Slack"
+      description: "The Workspace ID of the Watson skill"
       type: "string"
       immutable: false
       required: true
@@ -49,7 +41,7 @@ watsonskill:
     __metadata:
       name: "assistantUrl"
       label: "Watson Assistant API Endpoint"
-      description: "REST endpoint used to interact with the Watson Assistant skill"
+      description: "REST endpoint for Watson Assistant"
       type: "string"
       immutable: false
       required: true
