@@ -6,5 +6,5 @@ coverage
 .env*
 npm-debug.log
 .jshintrc
-k8s.cmd
+k8s*
 .project
